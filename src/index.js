@@ -1,21 +1,14 @@
-import Fastify from 'fastify';
+import { buildApp } from './app.js';
 
-const fastify = Fastify({
-  logger: true
-});
-
-// Ruta Hola Mundo
-fastify.get('/', async (request, reply) => {
-  return { message: '¡Hola Mundo!' };
-});
+const app = buildApp();
 
 const start = async () => {
   try {
     const port = process.env.PORT || 3000;
-    await fastify.listen({ port: Number(port), host: '0.0.0.0' });
+    await app.listen({ port: Number(port), host: '0.0.0.0' });
     console.log(`Servidor corriendo en http://localhost:${port}`);
   } catch (err) {
-    fastify.log.error(err);
+    app.log.error(err);
     process.exit(1);
   }
 };
