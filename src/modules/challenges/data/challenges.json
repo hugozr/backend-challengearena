@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Desafio x",
+    "description": "Cuenta un chiste",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Desafio y",
+    "description": "Guiña el ojo a alguien",
+    "isActive": true
+  }
+]
