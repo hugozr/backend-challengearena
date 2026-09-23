@@ -4,13 +4,23 @@
     "categoryId": 1,
     "name": "Desafio x",
     "description": "Cuenta un chiste",
-    "isActive": true
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": true,
+    "placeThree": true,
+    "placeFive": true
   },
   {
     "id": 2,
     "categoryId": 1,
     "name": "Desafio y",
     "description": "Guiña el ojo a alguien",
-    "isActive": true
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": true,
+    "placeThree": true,
+    "placeFive": true
   }
 ]
