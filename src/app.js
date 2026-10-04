@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import { challengesRoutes } from './modules/challenges/challenges.routes.js';
 import { subscriptionsRoutes } from './modules/subscriptions/subscriptions.routes.js';
 import { usersRoutes } from './modules/users/users.routes.js';
+import { imagesRoutes } from './modules/images/images.routes.js';
 
 export function buildApp(options = {}) {
   const fastify = Fastify({
@@ -18,6 +19,7 @@ export function buildApp(options = {}) {
   fastify.register(challengesRoutes, { prefix: '/challenges' });
   fastify.register(subscriptionsRoutes, { prefix: '/subscriptions' });
   fastify.register(usersRoutes, { prefix: '/users' });
+  fastify.register(imagesRoutes, { prefix: '/images' });
 
   return fastify;
 }
