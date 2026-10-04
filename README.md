@@ -5,21 +5,26 @@ Backend desarrollado con **Node.js** y **Fastify** utilizando una arquitectura m
 ## 🚀 Inicio Rápido
 
 ### Requisitos
+
 - Node.js v20+ (recomendado Node v24)
 - npm
 
 ### Instalación
+
 ```bash
 npm install
 ```
 
 ### Ejecutar en Desarrollo
+
 Inicia el servidor con recarga automática (`--watch` nativo):
+
 ```bash
 npm run dev
 ```
 
 ### Ejecutar en Producción
+
 ```bash
 npm start
 ```
@@ -35,6 +40,7 @@ El manual completo de endpoints, parámetros, formatos de respuesta y ejemplos d
 👉 **[Manual de APIs y Endpoints (docs/api.md)](./docs/api.md)**
 
 ### Resumen de Endpoints:
+
 - `GET /`: Healthcheck / Hola Mundo.
 - `GET /challenges`: Listar todos los desafíos.
 - `GET /challenges/:id/by-category`: Listar desafíos filtrados por categoría.
