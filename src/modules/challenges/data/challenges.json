@@ -17,7 +17,7 @@
     "id": 12,
     "categoryId": 1,
     "name": "Beso en el cuello",
-    "description": "Deja 3 besos lentos en el cuello de otra persona. Un roce no cuenta.",
+    "description": "Deja que te hagan marcas de besos en el cuello. Puede ser dibujados o chupados.",
     "isActive": true,
     "femApplied": true,
     "maleApplied": true,
@@ -58,16 +58,16 @@
   {
     "id": 15,
     "categoryId": 1,
-    "name": "Soplo al oído",
-    "description": "Acércate al oído de otra persona y sopla despacio durante 5 segundos. Si te ríes, se repite.",
+    "name": "Beso en la mano",
+    "description": "Toma la mano de otra persona y dale un beso en el dorso. Si te ríes o no lo haces, se repite.",
     "isActive": true,
     "femApplied": true,
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
     "placeFive": true,
-    "femImage": "ella_soplooido.png",
-    "maleImage": "el_soplooido.png"
+    "femImage": "ella_besomano.png",
+    "maleImage": "el_besomano.png"
   },
   {
     "id": 16,
@@ -83,48 +83,7 @@
     "femImage": "ella_piropoatrevido.png",
     "maleImage": "el_piropoatrevido.png"
   },
-  {
-    "id": 17,
-    "categoryId": 1,
-    "name": "Cubito viajero",
-    "description": "Pasa un cubito de hielo de tu boca a la de otra persona, sin usar las manos. Si se cae, se repite.",
-    "isActive": true,
-    "femApplied": true,
-    "maleApplied": true,
-    "placeOne": true,
-    "placeThree": true,
-    "placeFive": true,
-    "femImage": "ella_cubitoviajero.png",
-    "maleImage": "el_cubitoviajero.png"
-  },
-  {
-    "id": 18,
-    "categoryId": 1,
-    "name": "Beso sin manos",
-    "description": "Da un beso de 8 segundos a otra persona, con las manos a la espalda. Cortar el beso anula el reto.",
-    "isActive": true,
-    "femApplied": true,
-    "maleApplied": true,
-    "placeOne": true,
-    "placeThree": true,
-    "placeFive": true,
-    "femImage": "ella_besosinmanos.png",
-    "maleImage": "el_besosinmanos.png"
-  },
-  {
-    "id": 19,
-    "categoryId": 1,
-    "name": "Marca de labios",
-    "description": "Deja una marca de beso visible en la mejilla o el cuello de otra persona. Si no se ve, se repite.",
-    "isActive": true,
-    "femApplied": true,
-    "maleApplied": true,
-    "placeOne": true,
-    "placeThree": true,
-    "placeFive": true,
-    "femImage": "ella_marcalabios.png",
-    "maleImage": "el_marcalabios.png"
-  },
+
   {
     "id": 20,
     "categoryId": 1,
