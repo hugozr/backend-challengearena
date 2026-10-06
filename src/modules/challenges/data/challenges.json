@@ -9,7 +9,7 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_casibeso.png",
     "maleImage": "el_casibeso.png"
   },
@@ -23,7 +23,7 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_besocuello.png",
     "maleImage": "el_besocuello.png"
   },
@@ -37,7 +37,7 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_abrazeterno.png",
     "maleImage": "el_abrazeterno.png"
   },
@@ -51,7 +51,7 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_dedoviajero.png",
     "maleImage": "el_dedoviajero.png"
   },
@@ -65,7 +65,7 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_besomano.png",
     "maleImage": "el_besomano.png"
   },
@@ -79,11 +79,10 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_piropoatrevido.png",
     "maleImage": "el_piropoatrevido.png"
   },
-
   {
     "id": 20,
     "categoryId": 1,
@@ -94,8 +93,37 @@
     "maleApplied": true,
     "placeOne": true,
     "placeThree": true,
-    "placeFive": true,
+    "placeFive": false,
     "femImage": "ella_enpiernas.png",
     "maleImage": "el_enpiernas.png"
+  },
+  {
+    "id": 21,
+    "categoryId": 1,
+    "name": "Quédate sin moverte",
+    "description": "Mantente sin moverte durante 30 segundos. Si te mueves o te ríes, se repite.",
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": true,
+    "placeThree": true,
+    "placeFive": false,
+    "femImage": "ella_quedatesinmoverte.png",
+    "maleImage": "el_quedatesinmoverte.png"
+  },
+  {
+    "id": 22,
+    "categoryId": 1,
+    "name": "Torso desnudo",
+    "description": "Quédate sin ropa en el torso durante 15 segundos. Si te ríes o te bajas, se repite.",
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": false,
+    "placeThree": false,
+    "placeFive": true,
+    "femImage": "ella_torsodesnudo.png",
+    "maleImage": "el_torsodesnudo.png"
   }
+
 ]
