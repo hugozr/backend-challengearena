@@ -115,7 +115,7 @@
     "id": 22,
     "categoryId": 1,
     "name": "Torso desnudo",
-    "description": "Quédate sin ropa en el torso durante 15 segundos. Si te ríes o te bajas, se repite.",
+    "description": "Quédate sin ropa en el torso y te quedas así.",
     "isActive": true,
     "femApplied": true,
     "maleApplied": true,
@@ -124,6 +124,33 @@
     "placeFive": true,
     "femImage": "ella_torsodesnudo.png",
     "maleImage": "el_torsodesnudo.png"
+  }, 
+  {
+    "id": 23,
+    "categoryId": 1,
+    "name": "Posición de perrito",
+    "description": "Colócate en posición de perrito durante 30 segundos.",
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": false,
+    "placeThree": false,
+    "placeFive": true,
+    "femImage": "ella_posicionperrito.png",
+    "maleImage": "el_posicionperrito.png"
+  },
+  {
+    "id": 24,
+    "categoryId": 1,
+    "name": "Beso en el transero",
+    "description": "Deja que te den un beso en el transero. Puede ser dibujado o chupado.",
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": false,
+    "placeThree": false,
+    "placeFive": true,
+    "femImage": "ella_besotransero.png",
+    "maleImage": "el_besotransero.png"
   }
-
 ]
