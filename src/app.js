@@ -3,6 +3,7 @@ import { challengesRoutes } from './modules/challenges/challenges.routes.js';
 import { subscriptionsRoutes } from './modules/subscriptions/subscriptions.routes.js';
 import { usersRoutes } from './modules/users/users.routes.js';
 import { imagesRoutes } from './modules/images/images.routes.js';
+import { claimBalance } from './modules/subscriptions/subscriptions.controller.js';
 
 export function buildApp(options = {}) {
   const fastify = Fastify({
@@ -20,6 +21,10 @@ export function buildApp(options = {}) {
   fastify.register(subscriptionsRoutes, { prefix: '/subscriptions' });
   fastify.register(usersRoutes, { prefix: '/users' });
   fastify.register(imagesRoutes, { prefix: '/images' });
+
+  // Alias directo para conveniencia (permite llamar con o sin /subscriptions)
+  fastify.post('/claim-balance/:number', claimBalance);
+  fastify.post('/claim-balance', claimBalance);
 
   return fastify;
 }

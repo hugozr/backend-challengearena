@@ -26,7 +26,8 @@ Documentación técnica de los endpoints disponibles en el backend de **Challeng
 | `GET` | `/challenges/:id/by-category` | Obtener desafíos filtrados por ID de categoría |
 | `GET` | `/images` | Listar imágenes disponibles con metadatos y enlaces |
 | `GET` | `/images/:filename` | Visualizar / descargar una imagen específica |
-| `GET` | `/subscriptions` | Listar suscripciones (en desarrollo) |
+| `GET` | `/subscriptions` | Listar suscripciones |
+| `POST` | `/subscriptions/claim-balance/:number` *(o `/claim-balance/:number`)* | Reclamar balance invocando RPC get_transfer de Supabase |
 | `GET` | `/users` | Listar usuarios (en desarrollo) |
 
 ---
@@ -180,11 +181,42 @@ Sirve o descarga el archivo de imagen solicitado.
 
 ---
 
-### 3.4. Módulos en Desarrollo
+### 3.4. Módulo de Suscripciones (`/subscriptions`)
 
 #### `GET /subscriptions`
-- **Descripción**: Módulo de suscripciones de usuarios.
+- **Descripción**: Listado de suscripciones.
 - **Respuesta actual**: `[]` (`HTTP 200 OK`)
+
+#### `POST /subscriptions/claim-balance/:number`
+Reclama el balance de una transferencia invocando la función RPC `get_transfer` en Supabase.
+
+- **Parámetros de ruta**:
+  - `number` *(requerido)*: Identificador numérico o código de transferencia (`p_number`). También puede enviarse en el cuerpo de la petición como `{ "p_number": ... }`.
+- **Integración con Supabase**:
+  - **URL destino**: `https://rfsluonsoqhqdnyvoiuh.supabase.co/rest/v1/rpc/get_transfer` *(configurable vía variable de entorno `SUPABASE_URL`)*
+  - **Cabeceras enviadas a Supabase**:
+    - `Content-Type: application/json`
+    - `apikey: sb_publishable_NKJmfg3onswoLih4aaasadada` *(configurable vía `SUPABASE_API_KEY`)*
+    - `Authorization: Bearer sb_publishable_NKJmfg3onswoLih4aaasadada`
+    - `Prefer: return=representation`
+  - **Body enviado a Supabase**:
+    ```json
+    {
+      "p_number": <number>
+    }
+    ```
+- **Códigos de respuesta**:
+  - Traslada directamente el código de estado HTTP y la respuesta devuelta por Supabase (`200 OK`, `400 Bad Request`, `404 Not Found`, etc.).
+  - `400 Bad Request`: Si no se proporciona el parámetro `number`.
+  - `500 Internal Server Error`: En caso de fallo de red o conectividad con Supabase.
+- **Ejemplo de petición (cURL)**:
+  ```bash
+  curl -X POST http://localhost:3000/subscriptions/claim-balance/12345
+  ```
+
+---
+
+### 3.5. Módulos en Desarrollo
 
 #### `GET /users`
 - **Descripción**: Módulo de gestión de usuarios.
