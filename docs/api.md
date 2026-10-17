@@ -28,6 +28,7 @@ Documentación técnica de los endpoints disponibles en el backend de **Challeng
 | `GET` | `/images/:filename` | Visualizar / descargar una imagen específica |
 | `GET` | `/subscriptions` | Listar suscripciones |
 | `POST` | `/subscriptions/claim-balance/:number` *(o `/claim-balance/:number`)* | Reclamar balance invocando RPC get_transfer de Supabase |
+| `POST` | `/transfers` *(o `/create-transfer`)* | Crear transferencia invocando RPC create_transfer de Supabase |
 | `GET` | `/users` | Listar usuarios (en desarrollo) |
 
 ---
@@ -216,7 +217,59 @@ Reclama el balance de una transferencia invocando la función RPC `get_transfer`
 
 ---
 
-### 3.5. Módulos en Desarrollo
+### 3.5. Módulo de Transferencias (`/transfers`)
+
+#### `POST /transfers` *(Alias: `POST /create-transfer` o `POST /transfers/create`)*
+Crea una transferencia invocando la función RPC `create_transfer` en Supabase.
+
+- **Cuerpo de la petición (JSON)**:
+  - `code` *(texto, requerido)*: Código de la transferencia (ej. `"ABC123x"`).
+  - `value` *(número, requerido)*: Valor o monto de la transferencia (ej. `69`).
+  - `comment` *(texto, opcional)*: Comentario o descripción (ej. `"Transferencia de prueba"`).
+
+  ```json
+  {
+    "code": "ABC123x",
+    "value": 69,
+    "comment": "Transferencia de prueba"
+  }
+  ```
+
+- **Integración con Supabase**:
+  - **URL destino**: `https://rfsluonsoqhqdnyvoiuh.supabase.co/rest/v1/rpc/create_transfer` *(configurable vía variable de entorno `SUPABASE_URL`)*
+  - **Cabeceras enviadas a Supabase**:
+    - `Content-Type: application/json`
+    - `apikey: <SUPABASE_API_KEY>`
+    - `Authorization: Bearer <SUPABASE_API_KEY>`
+    - `Prefer: return=representation`
+  - **Body enviado a Supabase**:
+    ```json
+    {
+      "code": "ABC123x",
+      "value": 69,
+      "comment": "Transferencia de prueba"
+    }
+    ```
+
+- **Códigos de respuesta**:
+  - Traslada directamente el código de estado HTTP y la respuesta devuelta por Supabase (`200 OK`, `400 Bad Request`, `404 Not Found`, etc.).
+  - `400 Bad Request`: Si no se proporcionan los campos requeridos `code` o `value`.
+  - `500 Internal Server Error`: En caso de fallo de red o conectividad con Supabase.
+
+- **Ejemplo de petición (cURL)**:
+  ```bash
+  curl -X POST http://localhost:3000/transfers \
+    -H "Content-Type: application/json" \
+    -d '{
+      "code": "ABC123x",
+      "value": 69,
+      "comment": "Transferencia de prueba"
+    }'
+  ```
+
+---
+
+### 3.6. Módulos en Desarrollo
 
 #### `GET /users`
 - **Descripción**: Módulo de gestión de usuarios.
