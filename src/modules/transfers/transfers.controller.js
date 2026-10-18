@@ -17,6 +17,7 @@ export const createTransfer = async (request, reply) => {
 export const deactivateTransfer = async (request, reply) => {
   const id = request.params?.id ?? request.body?.p_id ?? request.body?.id;
 
+  
   if (id === undefined || id === null || id === '') {
     return reply.code(400).send({
       error: 'Parámetro requerido faltante',

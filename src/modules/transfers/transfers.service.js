@@ -49,7 +49,7 @@ export const deactivateTransferById = async (id) => {
 
   const numericId = !isNaN(id) && !isNaN(parseFloat(id)) ? Number(id) : id;
 
-  try {
+    try {
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
