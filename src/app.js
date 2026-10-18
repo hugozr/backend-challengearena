@@ -5,7 +5,7 @@ import { usersRoutes } from './modules/users/users.routes.js';
 import { imagesRoutes } from './modules/images/images.routes.js';
 import { claimBalance } from './modules/subscriptions/subscriptions.controller.js';
 import { transfersRoutes } from './modules/transfers/transfers.routes.js';
-import { createTransfer } from './modules/transfers/transfers.controller.js';
+import { createTransfer, deactivateTransfer } from './modules/transfers/transfers.controller.js';
 
 export function buildApp(options = {}) {
   const fastify = Fastify({
@@ -29,6 +29,8 @@ export function buildApp(options = {}) {
   fastify.post('/claim-balance/:number', claimBalance);
   fastify.post('/claim-balance', claimBalance);
   fastify.post('/create-transfer', createTransfer);
+  fastify.post('/deactivate-transfer', deactivateTransfer);
+  fastify.post('/deactivate-transfer/:id', deactivateTransfer);
 
   return fastify;
 }

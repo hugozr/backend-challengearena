@@ -29,6 +29,7 @@ Documentación técnica de los endpoints disponibles en el backend de **Challeng
 | `GET` | `/subscriptions` | Listar suscripciones |
 | `POST` | `/subscriptions/claim-balance/:number` *(o `/claim-balance/:number`)* | Reclamar balance invocando RPC get_transfer de Supabase |
 | `POST` | `/transfers` *(o `/create-transfer`)* | Crear transferencia invocando RPC create_transfer de Supabase |
+| `POST` | `/transfers/deactivate` *(o `/deactivate-transfer`)* | Desactivar transferencia por ID invocando RPC deactivate_transfer_by_id |
 | `GET` | `/users` | Listar usuarios (en desarrollo) |
 
 ---
@@ -266,6 +267,51 @@ Crea una transferencia invocando la función RPC `create_transfer` en Supabase.
       "comment": "Transferencia de prueba"
     }'
   ```
+
+#### `POST /transfers/deactivate` *(Alias: `POST /transfers/deactivate/:id`, `POST /deactivate-transfer` o `POST /deactivate-transfer/:id`)*
+Desactiva una transferencia por su ID invocando la función RPC `deactivate_transfer_by_id` en Supabase.
+
+- **Cuerpo de la petición (JSON)** *(o mediante parámetro de URL `:id`)*:
+  - `p_id` *(número, requerido)*: Identificador de la transferencia a desactivar (ej. `1`). También se acepta `id`.
+
+  ```json
+  {
+    "p_id": 1
+  }
+  ```
+
+- **Integración con Supabase**:
+  - **URL destino**: `https://rfsluonsoqhqdnyvoiuh.supabase.co/rest/v1/rpc/deactivate_transfer_by_id` *(configurable vía variable de entorno `SUPABASE_URL`)*
+  - **Cabeceras enviadas a Supabase**:
+    - `Content-Type: application/json`
+    - `apikey: <SUPABASE_API_KEY>`
+    - `Authorization: Bearer <SUPABASE_API_KEY>`
+    - `Prefer: return=representation`
+  - **Body enviado a Supabase**:
+    ```json
+    {
+      "p_id": 1
+    }
+    ```
+
+- **Códigos de respuesta**:
+  - Traslada directamente el código de estado HTTP y la respuesta devuelta por Supabase (`200 OK`, `400 Bad Request`, `404 Not Found`, etc.).
+  - `400 Bad Request`: Si no se proporciona el identificador `p_id` (o `:id`).
+  - `500 Internal Server Error`: En caso de fallo de red o conectividad con Supabase.
+
+- **Ejemplos de petición (cURL)**:
+  - Vía JSON Body:
+    ```bash
+    curl -X POST http://localhost:3000/transfers/deactivate \
+      -H "Content-Type: application/json" \
+      -d '{
+        "p_id": 1
+      }'
+    ```
+  - Vía URL Param:
+    ```bash
+    curl -X POST http://localhost:3000/transfers/deactivate/1
+    ```
 
 ---
 
