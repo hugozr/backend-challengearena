@@ -196,20 +196,6 @@
     "maleImage": "el_acariciatuspartes.png"
   },
   {
-    "id": 28,
-    "categoryId": 1,
-    "name": "Deja que acaricien tus partes íntimas",
-    "description": "Deja que otro jugador acaricie tus partes íntimas.",
-    "isActive": true,
-    "femApplied": true,
-    "maleApplied": true,
-    "placeOne": false,
-    "placeThree": false,
-    "placeFive": true,
-    "femImage": "ella_dejaqueacaricien.png",
-    "maleImage": "el_dejaqueacaricien.png"
-  },
-  {
     "id": 29,
     "categoryId": 1,
     "name": "Lame las partes íntimas",
@@ -230,11 +216,25 @@
     "description": "Introduce un artefacto en tus partes íntimas.",
     "isActive": true,
     "femApplied": true,
-    "maleApplied": true,
+    "maleApplied": false,
     "placeOne": false,
     "placeThree": false,
     "placeFive": true,
     "femImage": "ella_introduceartefacto.png",
     "maleImage": "el_introduceartefacto.png"
+  },
+  {
+    "id": 31,
+    "categoryId": 1,
+    "name": "69",
+    "description": "Cojan sus parejas y hagan un 69.",
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": false,
+    "placeOne": false,
+    "placeThree": false,
+    "placeFive": true,
+    "femImage": "ella_69.png",
+    "maleImage": "el_69.png"
   }
 ]
