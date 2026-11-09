@@ -184,30 +184,30 @@
   {
     "id": 27,
     "categoryId": 1,
-    "name": "Acaricia tus partes íntimas",
-    "description": "Acaricia tus propias partes íntimas durante un tiempo determinado.",
+    "name": "Acaricia las partes íntimas de otro jugador",
+    "description": "Acaricia las partes íntimas de otro jugador durante 30 segundos.",
     "isActive": true,
     "femApplied": true,
     "maleApplied": true,
     "placeOne": false,
     "placeThree": false,
     "placeFive": true,
-    "femImage": "ella_acariciatuspartes.png",
-    "maleImage": "el_acariciatuspartes.png"
+    "femImage": "ella_acaricialaspartes.png",
+    "maleImage": "el_acaricialaspartes.png"
   },
   {
-    "id": 29,
+    "id": 27,
     "categoryId": 1,
-    "name": "Lame las partes íntimas",
-    "description": "Lame las partes íntimas de otro jugador.",
+    "name": "Acaricia tus propias partes íntimas",
+    "description": "Acaricia tus partes íntimas delante de los otros jufadores.",
     "isActive": true,
     "femApplied": true,
     "maleApplied": true,
     "placeOne": false,
     "placeThree": false,
     "placeFive": true,
-    "femImage": "ella_lamepartesintimas.png",
-    "maleImage": "el_lamepartesintimas.png"
+    "femImage": "ella_acariciasuspartes.png",
+    "maleImage": "el_acariciasuspartes.png"
   },
   {
     "id": 30,
@@ -236,5 +236,19 @@
     "placeFive": true,
     "femImage": "ella_69.png",
     "maleImage": "el_69.png"
-  }
+  },
+  {
+    "id": 32,
+    "categoryId": 1,
+    "name": "Lame las partes íntimas",
+    "description": "Lame las partes íntimas de otro jugador.",
+    "isActive": true,
+    "femApplied": true,
+    "maleApplied": true,
+    "placeOne": false,
+    "placeThree": false,
+    "placeFive": true,
+    "femImage": "ella_lamepartesintimas.png",
+    "maleImage": "el_lamepartesintimas.png"
+  },
 ]
